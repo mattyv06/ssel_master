@@ -1,0 +1,160 @@
+*model for MAX44284
+*Version:01
+*date: May/24th/2013
+.SUBCKT MAX44284F RS+ RS- GND OUT SD VDD
+
+R+ RS+ ib+ 1g
+R- RS- ib- 1g
+Vi+ ib+ GND 0
+Vi- ib- GND 0
+Fi+ RS+ GND VALUE={-I(Vi+)+0.1u}
+Fi- RS- GND VALUE={-I(Vi-)+0.105u}
+Rs+ RS+ rsp 100
+Cs+ rsp RS- 533n
+Esen1 sen1 0 VALUE={V(rsp)-V(RS-)}
+Eo  OUT1 GND VALUE={(V(sen1)-9u+V(psr)+V(cmr))*50*V(sh)}
+Ecmr cmr 0 VALUE={(V(RS+)+V(RS-))/2*0.3u+V(cmr1)}
+Epsr psr 0 VALUE={V(VDD)*2u}
+Elim lim lim1 VDD GND 1
+Elim1 lim1 GND VALUE={-25m}
+Elim2 lim2 GND VALUE={1m}
+Dlim OUT lim DX1
+Dlim2 lim2 OUT DX1
+X_sh VDD 0 SD sh shutdown
+Ecm cm 0 VALUE={(V(RS+)+V(RS-))/2}
+Ecmr1 cmr1 0 table {V(cm)}= (-0.1,-150u) (0,0) (36,0)
+.MODEL DX1  D(n=0.001)
+GCC VDD GND VALUE={21u*V(sh)+0.1u}
+.MODEL DY D(IS=100E-14 N=10M)
+D401 OUT1 IO1 DY
+D402 IO2 OUT1 DY
+D403 OUT IO1 DY
+D404 IO2 OUT DY
+I400 IO1 IO2 40m
+.ends
+**************************************************************************************
+
+.SUBCKT MAX44284E RS+ RS- GND OUT SD VDD
+
+R+ RS+ ib+ 1g
+R- RS- ib- 1g
+Vi+ ib+ GND 0
+Vi- ib- GND 0
+Fi+ RS+ GND VALUE={-I(Vi+)+0.1u}
+Fi- RS- GND VALUE={-I(Vi-)+0.105u}
+Rs+ RS+ rsp 100
+Cs+ rsp RS- 3.95u
+Esen1 sen1 0 VALUE={V(rsp)-V(RS-)}
+Eo  OUT1 GND VALUE={(V(sen1)-9u+V(psr)+V(cmr))*500*V(sh)}
+Ecmr cmr 0 VALUE={(V(RS+)+V(RS-))/2*0.3u+V(cmr1)}
+Epsr psr 0 VALUE={V(VDD)*2u}
+Elim lim lim1 VDD GND 1
+Elim1 lim1 GND VALUE={-25m}
+Elim2 lim2 GND VALUE={1m}
+Dlim OUT lim DX1
+Dlim2 lim2 OUT DX1
+X_sh VDD 0 SD sh shutdown
+Ecm cm 0 VALUE={(V(RS+)+V(RS-))/2}
+Ecmr1 cmr1 0 table {V(cm)}= (-0.1,-150u) (0,0) (36,0)
+.MODEL DX1  D(n=0.001)
+GCC VDD GND VALUE={21u*V(sh)+0.1u}
+.MODEL DY D(IS=100E-14 N=10M)
+D401 OUT1 IO1 DY
+D402 IO2 OUT1 DY
+D403 OUT IO1 DY
+D404 IO2 OUT DY
+I400 IO1 IO2 40m
+.ends
+**************************************************************************************
+
+.SUBCKT MAX44284W RS+ RS- GND OUT SD VDD
+
+R+ RS+ ib+ 1g
+R- RS- ib- 1g
+Vi+ ib+ GND 0
+Vi- ib- GND 0
+Fi+ RS+ GND VALUE={-I(Vi+)+0.1u}
+Fi- RS- GND VALUE={-I(Vi-)+0.105u}
+Rs+ RS+ rsp 100
+Cs+ rsp RS- 1.6u
+Esen1 sen1 0 VALUE={V(rsp)-V(RS-)}
+Eo  OUT1 GND VALUE={(V(sen1)-9u+V(psr)+V(cmr))*200*V(sh)}
+Ecmr cmr 0 VALUE={(V(RS+)+V(RS-))/2*0.3u+V(cmr1)}
+Epsr psr 0 VALUE={V(VDD)*2u}
+Elim lim lim1 VDD GND 1
+Elim1 lim1 GND VALUE={-25m}
+Elim2 lim2 GND VALUE={1m}
+Dlim OUT lim DX1
+Dlim2 lim2 OUT DX1
+X_sh VDD 0 SD sh shutdown
+Ecm cm 0 VALUE={(V(RS+)+V(RS-))/2}
+Ecmr1 cmr1 0 table {V(cm)}= (-0.1,-150u) (0,0) (36,0)
+.MODEL DX1  D(n=0.001)
+GCC VDD GND VALUE={21u*V(sh)+0.1u}
+.MODEL DY D(IS=100E-14 N=10M)
+D401 OUT1 IO1 DY
+D402 IO2 OUT1 DY
+D403 OUT IO1 DY
+D404 IO2 OUT DY
+I400 IO1 IO2 40m
+.ends
+**************************************************************************************
+
+.SUBCKT MAX44284H RS+ RS- GND OUT SD VDD
+
+R+ RS+ ib+ 1g
+R- RS- ib- 1g
+Vi+ ib+ GND 0
+Vi- ib- GND 0
+GFi+ RS+ GND VALUE={-I(Vi+)+0.1u}
+GFi- RS- GND VALUE={-I(Vi-)+0.105u}
+Rs+ RS+ rsp 100
+Cs+ rsp RS- 796n
+Esen1 sen1 0 VALUE={V(rsp)-V(RS-)}
+Eo  OUT1 GND VALUE={(V(sen1)-9u+V(psr)+V(cmr))*100*V(sh)}
+Ecmr cmr 0 VALUE={(V(RS+)+V(RS-))/2*0.3u+V(cmr1)}
+Epsr psr 0 VALUE={V(VDD)*2u}
+Elim lim lim1 VDD GND 1
+Elim1 lim1 GND VALUE={-25m}
+Elim2 lim2 GND VALUE={1m}
+Dlim OUT lim DX1
+Dlim2 lim2 OUT DX1
+X_sh VDD 0 SD sh shutdown
+Ecm cm 0 VALUE={(V(RS+)+V(RS-))/2}
+Ecmr1 cmr1 0 table {V(cm)}= (-0.1,-150u) (0,0) (36,0)
+.MODEL DX1  D(n=0.001)
+GCC VDD GND VALUE={21u*V(sh)+0.1u}
+.MODEL DY D(IS=100E-14 N=10M)
+D401 OUT1 IO1 DY
+D402 IO2 OUT1 DY
+D403 OUT IO1 DY
+D404 IO2 OUT DY
+I400 IO1 IO2 40m
+.ends
+**************************************************************************************
+.SUBCKT shutdown 10 18 91 cs
+E20 20 18 10 18 0.5
+Ecs cs 18 VALUE={V(96)-V(20)}
+*SHUTDOWN
+RSHIN 91 20 500K
+ESH3 220 20 91 18 1
+RSHA 220 221 1K
+CSHA 221 20 32P
+ESH2 92 20 221 20 1
+RSH1 92 93 100
+VSH1 93 94 0V
+EHYS 95 94 POLY(2) 10 18 96 20 0 0 0 0 0.3
+RBL 94 20 10K
+ESH1 95 20 10 18 0.45
+****
+FSH1 20 96 Vsh1 1
+CSH1 96 20 10P
+DSH2 20 96 DA
+DSH1 96 97 DA
+VSH2 97 20 1V
+RSH2 96 20 100K
+.MODEL DA D(N=0.1M)
+.ends
+
+
+* Copyright (c) 2003-2015 Maxim Integrated Products.  All Rights Reserved.

@@ -1,0 +1,31 @@
+*DIODES_INC_SPICE_MODEL
+*SIMULATOR=SIMETRIX
+*ORIGIN=DZSL_DPG_SU
+*DATE=07Sep2016
+*VERSION=1
+
+.SUBCKT DDZ17  1 2
+*        Terminals    A   K
+D1 1 2 DF
+DZ 1 2 DR
+.MODEL DF D ( IS=55f RS=.075 N=1.15
++ CJO=46.3p VJ=0.750 M=0.330 TT=10.1n BV=16.85 IBV=10u TBV1=.4m IKF=30m EG=1.16)
+.MODEL DR D ( IS=5f RS=6k N=10 BV=16 IBV=1p ISR=1f Eg=.08 TBV1=-1m)
+.ENDS
+
+
+
+*                (c)  2016 Diodes Inc
+*
+*   The copyright in these models  and  the designs embodied belong
+*   to Diodes Incorporated (" Zetex ").  They  are  supplied
+*   free of charge by Zetex for the purpose of research and design
+*   and may be used or copied intact  (including this notice)  for
+*   that purpose only.  All other rights are reserved.  The models
+*   are believed accurate but no condition  or warranty  as to their
+*   merchantability or fitness for purpose is given and no liability
+*   in respect of any use is accepted by Diodes Incorporated, its distributors
+*   or agents.
+*
+*   Diodes Zetex Semiconductors Ltd, Zetex Technology Park, Chadderton,
+*   Oldham, United Kingdom, OL9 9LL

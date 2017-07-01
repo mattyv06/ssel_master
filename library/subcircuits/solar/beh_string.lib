@@ -1,0 +1,36 @@
+*****
+.SUBCKT beh_imm_2s string
+Rs trace int {rs}
+Bdiode int 0 I=v(isc)/(exp((v(voc)/n)/(8.66e-5*(v(tcell)+273)))-1)*(exp((v(int)/n)/(8.66e-5*(v(tcell)+273)))-1)
+Birrad 0 int I=irrad*((jsc*area)+jsc_coeff*area*(v(tcell)-tref))/1353
+Bisc isc 0 V=irrad*((jsc*area)+jsc_coeff*area*(v(tcell)-tref))/1353
+Bvoc voc 0 V=vocr+voc_coeff*(v(tcell)-tref)+8.66e-5*(v(tcell)+273)*log(v(isc)/(area*n*jsc))
+Btcell tcell 0 V=temp
+Rtrace string trace {rtrace}
+Rsh int 0 {rsh}
+
+.params n=2,irrad=1353,jsc=11.5e-3,jsc_coeff=11.5e-6,area=8.23,tref=28,
++vocr=n*4.8,voc_coeff=-6.8e-3,vmpr=n*4.4,jmp=11.0e-3,vt=0.0258
++rs=(vocr/(jsc*area*n))-((vmpr*jmp)/(jsc*jsc*area*n*((vocr/vt-log((vocr/vt)+0.72))/(1+vocr/vt))))
++rsh=1.5e3,rtrace=0.01
+
+.ends beh_imm_2s
+*****
+*****
+.SUBCKT beh_ztj_4s string
+Rs trace int {rs}
+Bdiode int 0 I=v(isc)/(exp((v(voc)/n)/(8.66e-5*(v(tcell)+273)))-1)*(exp((v(int)/n)/(8.66e-5*(v(tcell)+273)))-1)
+Birrad 0 int I=irrad*((jsc*area)+jsc_coeff*area*(v(tcell)-tref))/1353
+Bisc isc 0 V=irrad*((jsc*area)+jsc_coeff*area*(v(tcell)-tref))/1353
+Bvoc voc 0 V=vocr+voc_coeff*(v(tcell)-tref)+8.66e-5*(v(tcell)+273)*log(v(isc)/(area*n*jsc))
+Btcell tcell 0 V=temp
+Rtrace string trace {rtrace}
+Rsh int 0 {rsh}
+
+.params n=4,irrad=1353,jsc=17.1e-3,jsc_coeff=11.5e-6,area=8.23,tref=28,
++vocr=n*2.715,voc_coeff=-6.8e-3,vmpr=n*2.38,jmp=16.5e-3,vt=0.0258
++rs=(vocr/(jsc*area*n))-((vmpr*jmp)/(jsc*jsc*area*n*((vocr/vt-log((vocr/vt)+0.72))/(1+vocr/vt))))
++rsh=1e3,rtrace=0.01
+
+.ends beh_ztj_4s
+*****

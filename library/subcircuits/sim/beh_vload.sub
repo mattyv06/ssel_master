@@ -1,0 +1,11 @@
+*
+.SUBCKT beh_vload in ctl
+Rseries load in {trace}
+Rload load 0 {rpar}
+Cload load 0 {cpar}
+Rctl ctl 0 1
+Bload load 0 V=if(v(in)>v(ctl),v(ctl),v(in))
+*
+.params rpar=100k cpar=1n trace=0.01
+*
+.ends

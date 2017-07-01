@@ -1,0 +1,137 @@
+EESchema Schematic File Version 2
+LIBS:analog
+LIBS:common
+LIBS:connector
+LIBS:logic
+LIBS:microcontroller
+LIBS:regulator
+LIBS:source
+LIBS:switch
+LIBS:transceiver
+LIBS:transistor
+LIBS:cubesat_bus-cache
+EELAYER 26 0
+EELAYER END
+$Descr USLetter 11000 8500
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L SSEL_BUS104 H?
+U 1 1 5948023F
+P 1700 900
+F 0 "H?" H 2500 1084 60  0000 C CNN
+F 1 "SSEL_BUS104" H 1900 1050 60  0001 L CNN
+F 2 "" H 1700 900 60  0001 C CNN
+F 3 "" H 1700 900 60  0001 C CNN
+	1    1700 900 
+	1    0    0    -1  
+$EndComp
+$Comp
+L SSEL_BUS104 H?
+U 2 1 59480296
+P 1700 4000
+F 0 "H?" H 2500 4184 60  0000 C CNN
+F 1 "SSEL_BUS104" H 1900 4150 60  0001 L CNN
+F 2 "" H 1700 4000 60  0001 C CNN
+F 3 "" H 1700 4000 60  0001 C CNN
+	2    1700 4000
+	1    0    0    -1  
+$EndComp
+$Comp
+L GS2 GS?
+U 1 1 594834DE
+P 2700 7000
+F 0 "GS?" V 2495 7000 50  0000 C CNN
+F 1 "GS2" V 2586 7000 50  0000 C CNN
+F 2 "" V 2774 7000 50  0000 C CNN
+F 3 "" H 2700 7000 50  0000 C CNN
+	1    2700 7000
+	0    1    1    0   
+$EndComp
+$Comp
+L CHASSIS #PWR?
+U 1 1 59483621
+P 2300 7300
+F 0 "#PWR?" H 2300 7100 50  0001 C CNN
+F 1 "CHASSIS" H 2388 7260 50  0000 L CNN
+F 2 "" H 2300 7250 50  0001 C CNN
+F 3 "" H 2300 7250 50  0001 C CNN
+	1    2300 7300
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 594836EB
+P 3100 7300
+F 0 "#PWR?" H 3100 7050 50  0001 C CNN
+F 1 "GND" H 3100 7150 50  0001 C CNN
+F 2 "" H 3100 7300 50  0001 C CNN
+F 3 "" H 3100 7300 50  0001 C CNN
+	1    3100 7300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2100 7000 2300 7000
+Wire Wire Line
+	2300 7000 2500 7000
+Wire Wire Line
+	2300 7300 2300 7000
+Connection ~ 2300 7000
+Wire Wire Line
+	2900 7000 3100 7000
+Wire Wire Line
+	3100 7000 3100 7300
+$Comp
+L Mounting_Hole MT?
+U 1 1 59483E9C
+P 2000 7200
+F 0 "MT?" H 2100 7200 50  0000 L CNN
+F 1 "Mounting_Hole" H 2000 7325 50  0001 C CNN
+F 2 "" H 2000 7200 50  0001 C CNN
+F 3 "" H 2000 7200 50  0001 C CNN
+	1    2000 7200
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Mounting_Hole MT?
+U 1 1 59483EC6
+P 2000 7400
+F 0 "MT?" H 2100 7400 50  0000 L CNN
+F 1 "Mounting_Hole" H 2000 7525 50  0001 C CNN
+F 2 "" H 2000 7400 50  0001 C CNN
+F 3 "" H 2000 7400 50  0001 C CNN
+	1    2000 7400
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Mounting_Hole MT?
+U 1 1 59483EE6
+P 2000 7600
+F 0 "MT?" H 2100 7600 50  0000 L CNN
+F 1 "Mounting_Hole" H 2000 7725 50  0001 C CNN
+F 2 "" H 2000 7600 50  0001 C CNN
+F 3 "" H 2000 7600 50  0001 C CNN
+	1    2000 7600
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Mounting_Hole_PAD MT?
+U 1 1 59483F37
+P 2000 7000
+F 0 "MT?" V 2145 6980 50  0000 C CNN
+F 1 "Mounting_Hole_PAD" H 2000 7125 50  0001 C CNN
+F 2 "" H 2000 6950 50  0001 C CNN
+F 3 "" H 2000 6950 50  0001 C CNN
+	1    2000 7000
+	0    -1   -1   0   
+$EndComp
+$EndSCHEMATC
